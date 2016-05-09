@@ -1,9 +1,6 @@
-
-# coding: utf-8
+# Copyright 2016, Chau Pham
 
 # This is a program that calculates an estimation of Pi using Monte Carlo distribution.
-
-# In[7]:
 
 import math
 import numpy as np
@@ -114,17 +111,3 @@ def integrand(x):
 
 calcPi, err = quad(integrand, 0, 1)
 print("The actual value of Pi, calculated by integration, is:", calcPi*4)
-
-# We drew a square, and then a circle within that square whose diameter is equal to the length of the side of the square. For every trial, we threw six magnetic balls at this figure. We recorded the number of magnets that landed inside the circle, and the ones that landed outside of the circle (but still inside the square). This gives us an estimation of the ratio of the area of the circle to the area of the square. If the radius of the circle is r, then the area of the circle is Pi(r2), and the area of the square is 4(r2), thus the ratio of the area of the circle to the area of the square is Pi/4. Therefore, multiplying the estimated ratio we got from throwing the magnets by four will give us an estimation of Pi.
-
-We recorded 25 sets of throws (6 throws/set). It took us about 30 minutes to do the 25 sets. Graphing all 25 ratios, then drawing an exponential line of best fit, we can see that after 25 throws, the estimation of Pi decreases from 3.7 to 3.5, so by calculating the slope of the line of best fit:
-
-(3.7 - 3.5) / (25 - 1) ≈ -0.0087
-
-Then we can see that the number of throws needed for the graph to start converging to the value of Pi is:
-
-25 - ( (3.5 - 3.14) / (-0.0087) ) ≈ 67 (throws)
-
-which should take around 80 minutes.
-
-By graphing the estimations of pi after every magnet throwing simulation, we can see when the graph starts converging to the real value of pi (~3.14). We see that this happens after around 200 magnets thrown, which will equal about 4 hours of throwing magnets in real life.
